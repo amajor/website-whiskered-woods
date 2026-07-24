@@ -172,48 +172,13 @@
       margin-top: 2rem;
       border-radius: var(--radius) var(--radius) 0 0;
       overflow: hidden;
-      max-height: 420px;
+      max-height: 950px;
     }
     .bob-hero-img img,
     .photo-placeholder {
       width: 100%;
       display: block;
     }
-
-    /* ── PHOTO PLACEHOLDERS ── */
-    .photo-placeholder {
-      background: var(--cream-dark);
-      border: 2px dashed var(--border);
-      border-radius: var(--radius);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      color: var(--ink-faint);
-      font-size: 0.8rem;
-      text-align: center;
-      padding: 1.5rem;
-    }
-    .photo-placeholder .ph-icon {
-      font-size: 2rem;
-      opacity: 0.5;
-    }
-    .photo-placeholder .ph-label {
-      font-weight: 500;
-      color: var(--ink-muted);
-      font-size: 0.875rem;
-    }
-    .photo-placeholder .ph-hint {
-      font-size: 0.78rem;
-      color: var(--ink-faint);
-      max-width: 280px;
-      line-height: 1.5;
-    }
-    .ph-tall { min-height: 340px; border-radius: var(--radius) var(--radius) 0 0; }
-    .ph-wide { min-height: 260px; }
-    .ph-square { min-height: 280px; }
-    .ph-short { min-height: 180px; }
 
     /* ── ARTICLE BODY ── */
     .bob-body {
@@ -587,11 +552,12 @@
     </div>
     <div class="bob-hero-inner" style="padding-top:0;">
       <div class="bob-hero-img">
-        <div class="photo-placeholder ph-tall">
-          <div class="ph-icon">🫙</div>
-          <div class="ph-label">Photo: Bob in his jar</div>
-          <div class="ph-hint">A good shot of Bob active and bubbling, or freshly fed. Ideally showing him doubled in size or trying to escape his lid.</div>
-        </div>
+        <img
+          src="img/bob-sourdough-starter-active.jpg"
+          alt="Bob, our sourdough starter, active and doubled in size after feeding"
+          style="width:100%; display:block;"
+          loading="eager"
+        >
       </div>
     </div>
   </div>
@@ -805,15 +771,16 @@
     </div>
 
     <div class="inline-photo">
-      <figure>
-        <div class="photo-placeholder ph-square">
-          <div class="ph-icon">🌡️</div>
-          <div class="ph-label">Photo: Bob being dramatic</div>
-          <div class="ph-hint">Bob active, doubled, overflowing, or trying to escape his lid. The more personality the better. A close-up of bubbles works great too.</div>
-        </div>
-        <figcaption>Bob at peak activity — doing what he does best.</figcaption>
-      </figure>
-    </div>
+    <figure>
+      <img
+        src="img/bob-sourdough-starter-peak-activity.jpg"
+        alt="Bob the sourdough starter at peak activity, bubbling and ready to make focaccia!"
+        style="width:100%; border-radius:var(--radius);"
+        loading="lazy"
+      >
+      <figcaption>Bob at peak activity, doing what he does best.</figcaption>
+    </figure>
+  </div>
 
     <div class="prose">
       <p>We like to think Bob would recognize himself in his fictional namesake: a starter who has been through a lot, proven himself under pressure, and shown up reliably when it mattered. He has earned his place in this kitchen.</p>
