@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Custom themed bake drops for book clubs, D&D groups, and small gatherings — private ordering link, pickup near Zeeland, MI. Cottage-baked by The Whiskered Woods.">
+<title>Custom Bake Drops for Book Clubs & Game Nights | The Whiskered Woods</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500&display=swap');
+
+  :root{
+    --moss:#3f4a34;
+    --moss-dark:#2b3323;
+    --cream:#f6f1e6;
+    --paper:#fbf8f1;
+    --clay:#a8663f;
+    --clay-dark:#7c491f;
+    --ink:#2c281f;
+    --ink-soft:#5a5546;
+    --line:#dcd3bd;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Karla',sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    margin:0;
+    color:var(--moss-dark);
+  }
+  a{color:var(--clay-dark);}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+  /* Hero */
+  .hero{
+    padding:88px 0 64px;
+    text-align:center;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(63,74,52,0.07), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(168,102,63,0.08), transparent 45%);
+  }
+  .hero .eyebrow{
+    font-size:15px;
+    color:var(--clay-dark);
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:44px;
+    line-height:1.15;
+    letter-spacing:-0.5px;
+  }
+  .hero p.sub{
+    max-width:480px;
+    margin:22px auto 0;
+    font-size:17px;
+    color:var(--ink-soft);
+  }
+  .hero .leaf-divider{
+    margin:34px auto 0;
+    width:64px;
+    height:2px;
+    background:var(--line);
+    position:relative;
+  }
+  .hero .leaf-divider::after{
+    content:"❦";
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    color:var(--clay);
+    font-size:20px;
+    background:var(--cream);
+    padding:0 10px;
+  }
+
+  /* Section shared */
+  section{padding:56px 0;}
+  section.bordered{border-top:1px solid var(--line);}
+  .section-head{margin-bottom:30px;}
+  .section-head h2{font-size:28px;}
+  .section-head p{color:var(--ink-soft); margin-top:8px; font-size:16px; max-width:520px;}
+
+  /* Who it's for */
+  .fits{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+  .fit-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:20px 22px;
+  }
+  .fit-card h3{font-size:18px; margin-bottom:6px;}
+  .fit-card p{font-size:14.5px; color:var(--ink-soft); margin:0;}
+
+  /* How it works - stacked steps, ledger style */
+  .steps{border-top:1px solid var(--line);}
+  .step{
+    display:grid;
+    grid-template-columns:44px 1fr;
+    gap:18px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .step-num{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--clay);
+  }
+  .step h3{font-size:17px; margin-bottom:4px;}
+  .step p{font-size:15px; color:var(--ink-soft); margin:0;}
+
+  /* Menu inspiration */
+  .menu-tabs{
+    display:flex;
+    gap:10px;
+    margin-bottom:24px;
+    flex-wrap:wrap;
+  }
+  .menu-tab{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:14px;
+    padding:6px 16px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:var(--ink-soft);
+    background:var(--paper);
+  }
+  .menu-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .menu-item{
+    border-left:2px solid var(--clay);
+    padding:4px 0 4px 16px;
+  }
+  .menu-item .name{font-family:'Fraunces',serif; font-size:15.5px; color:var(--ink);}
+  .menu-item .desc{font-size:13px; color:var(--ink-soft); margin-top:2px;}
+
+  .custom-note{
+    margin-top:28px;
+    background:var(--moss);
+    color:var(--cream);
+    border-radius:4px;
+    padding:22px 26px;
+    font-family:'Fraunces',serif;
+    font-size:16.5px;
+    line-height:1.55;
+  }
+  .custom-note em{font-style:italic; color:#d9e0cd;}
+
+  /* Pricing table */
+  .pricing-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14.5px;
+    margin-bottom:10px;
+  }
+  .pricing-table th{
+    text-align:left;
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:14px;
+    color:var(--moss-dark);
+    padding:10px 12px;
+    border-bottom:1px solid var(--line);
+  }
+  .pricing-table td{
+    padding:12px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+    color:var(--ink);
+    line-height:1.7;
+  }
+  .pricing-table td:first-child{
+    font-family:'Fraunces',serif;
+    font-size:15.5px;
+    white-space:nowrap;
+  }
+  .pricing-table td:last-child{
+    white-space:nowrap;
+    color:var(--ink-soft);
+  }
+  .pricing-table .tag{
+    display:block;
+    font-family:'Karla',sans-serif;
+    font-size:12px;
+    color:var(--clay-dark);
+    margin-top:2px;
+  }
+  .table-note{
+    font-size:13px;
+    color:var(--ink-soft);
+    font-style:italic;
+    margin:0 0 26px;
+  }
+  .math-note{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:2px solid var(--clay);
+    border-radius:4px;
+    padding:16px 20px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin-top:18px;
+  }
+
+  /* Why section */
+  .why-lead{
+    font-family:'Fraunces',serif;
+    font-size:24px;
+    line-height:1.4;
+    color:var(--moss-dark);
+    text-align:center;
+    max-width:520px;
+    margin:0 auto 40px;
+  }
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .why-item h3{
+    font-size:17px;
+    margin-bottom:8px;
+  }
+  .why-item p{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .why-close{
+    text-align:center;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    color:var(--clay-dark);
+    font-size:15.5px;
+    margin:36px auto 0;
+  }
+
+  /* Terms */
+  .terms{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .term{
+    padding:18px 20px;
+    border-bottom:1px solid var(--line);
+  }
+  .term:nth-child(odd){border-right:1px solid var(--line);}
+  .term .label{font-size:12.5px; text-transform:uppercase; letter-spacing:0.06em; color:var(--clay-dark); margin-bottom:4px;}
+  .term .value{font-size:15px; color:var(--ink);}
+
+  /* CTA */
+  .cta{
+    text-align:center;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:44px 32px;
+  }
+  .cta h2{font-size:26px; margin-bottom:10px;}
+  .cta p{color:var(--ink-soft); max-width:440px; margin:0 auto 26px;}
+  .cta-buttons{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    font-family:'Karla',sans-serif;
+    font-weight:500;
+    font-size:15px;
+    padding:13px 26px;
+    border-radius:3px;
+    text-decoration:none;
+    border:1px solid var(--moss);
+  }
+  .btn-primary{background:var(--moss); color:var(--cream);}
+  .btn-secondary{background:transparent; color:var(--moss-dark);}
+
+  footer{
+    padding:36px 0 48px;
+    text-align:center;
+    font-size:13px;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+  }
+  footer .brand{font-family:'Fraunces',serif; font-style:italic; color:var(--moss-dark); font-size:15px; margin-bottom:6px;}
+
+  @media (max-width:600px){
+    .hero h1{font-size:32px;}
+    .fits{grid-template-columns:1fr;}
+    .menu-grid{grid-template-columns:1fr;}
+    .terms{grid-template-columns:1fr;}
+    .term:nth-child(odd){border-right:none;}
+    .why-grid{grid-template-columns:1fr; gap:22px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">The Whiskered Woods</div>
+    <h1>A bake made<br>just for your table</h1>
+    <p class="sub">A private ordering link for your book club, game night, or small group — with flavors named and themed around what you're reading, playing, or celebrating. Everyone orders and pays their own way; one pickup, one agreed spot.</p>
+    <div class="leaf-divider"></div>
+  </div>
+</div>
+
+<section class="bordered">
+  <div class="wrap why">
+    <p class="why-lead">Your gathering is already the good part. This just makes it a little more fun.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>Enjoy it there</h3>
+        <p>Snack on something themed to your book or campaign while you meet — it's a small, easy way to make the night feel like an event.</p>
+      </div>
+      <div class="why-item">
+        <h3>Or take it home</h3>
+        <p>Everything's packaged to travel. Take your share home and enjoy it later — a little bit of the gathering that lasts past the night itself.</p>
+      </div>
+      <div class="why-item">
+        <h3>Save some for next time</h3>
+        <p>Breads and scones freeze well, so nothing has to be rushed. Dry mixes are shelf-stable and ready whenever you want them. Save a piece for your next chapter, session, or meeting.</p>
+      </div>
+    </div>
+    <p class="why-close">We handle the baking and the theming — you just show up and enjoy your people.</p>
+  </div>
+</section>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Who this is for</h2>
+      <p>If your group meets regularly and you'd love something a little special waiting for you, this is built for that.</p>
+    </div>
+    <div class="fits">
+      <div class="fit-card">
+        <h3>Book clubs</h3>
+        <p>Menus themed to your current read — cozy fantasy, romantasy, or whatever's on the docket.</p>
+      </div>
+      <div class="fit-card">
+        <h3>Game nights</h3>
+        <p>D&D and tabletop groups get flavors and names pulled straight from your campaign.</p>
+      </div>
+      <div class="fit-card">
+        <h3>Small groups & church groups</h3>
+        <p>Seasonal or gathering-themed treats for a regular meetup.</p>
+      </div>
+      <div class="fit-card">
+        <h3>Anyone with an occasion</h3>
+        <p>A birthday, a season finale, a milestone chapter — if it's worth marking, it's worth baking for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How it works</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>One person reaches out</h3>
+          <p>A group organizer shares the theme (a book, a campaign, an occasion), the preferred date, and a pickup or drop-off location — a quick message, call, or email works.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>We confirm the date</h3>
+          <p>We check our baking calendar and confirm we can take it, or suggest a nearby date that works better on our end.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>The organizer confirms the minimum</h3>
+          <p>We'll share example pricing for your theme. Since you know your group best, the organizer confirms ahead of time that people are on board with the $100 minimum before we design or build anything.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h3>We design your menu, and the link opens</h3>
+          <p>We build your 3–4 item menu — a mix of bread or focaccia, scones, cookies, tea blends, and dry mixes (herb blends, pancake mix, beer or soda bread mix) — and send your private order link.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <h3>Pickup at your agreed spot</h3>
+          <p>Everyone orders and pays individually, or one person orders for the group. We drop off, or the organizer picks up everyone's order, at the location you've agreed on together.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Menu inspiration & example pricing</h2>
+      <p>A sense of what a themed menu looks like, item by item. Actual products and pricing are designed fresh per event.</p>
+    </div>
+
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Theme</th>
+          <th>Example items</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fourth Wing<span class="tag">Romantasy</span></td>
+          <td>
+            Dragonfire focaccia — bold Bloody Mary, pickled jalapeños & Old Bay seasoning<br>
+            Skyfire scone 4-pack — cardamom, orange, dark honey<br>
+            Dragon's Kiss cookie 4-pack — dark cocoa, pomegranate swirl<br>
+            Cadet's Morning pancake mix — cinnamon, cardamom, clove
+          </td>
+          <td>$12<br>$18<br>$6<br>$12</td>
+        </tr>
+        <tr>
+          <td>Warriors<span class="tag">Kids' book club</span></td>
+          <td>
+            Catmint Hearth loaf — herb sourdough<br>
+            Kittypet's Treat cookie 4-pack — chocolate chip<br>
+            Moonlit Clearing scone 4-pack — blueberry<br>
+            Campfire cocoa mix
+          </td>
+          <td>$9<br>$6<br>$18<br>$10</td>
+        </tr>
+        <tr>
+          <td>D&D & tabletop<span class="tag">Game night</span></td>
+          <td>
+            Fireball focaccia — roasted red pepper & chili oil<br>
+            Critical Hit cookie 4-pack — brown butter chocolate chip<br>
+            Adventurer's Ration dip blend — herb & oil dip mix<br>
+            Tavern Table beer bread mix
+          </td>
+          <td>$12<br>$6<br>$8<br>$10</td>
+        </tr>
+        <tr>
+          <td>Small groups<span class="tag">Bible study, clubs</span></td>
+          <td>
+            Fellowship focaccia — roasted garlic & herb<br>
+            Gathering scone 4-pack — cinnamon, brown butter<br>
+            Community Classic cookie 4-pack — chocolate chip<br>
+            Weekend Table pancake mix — sourdough
+          </td>
+          <td>$14<br>$18<br>$6<br>$10</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="table-note">Cookies and scones are sold as 4-packs; each order includes one bread — a focaccia or an artisan loaf, not both. These are examples to help estimate cost per person — actual items, flavors, and pricing are set for your specific event and may vary.</p>
+
+    <div class="custom-note">
+      Every menu is 3–4 items, chosen from one bread or focaccia, scones, cookies, tea blends, and dry mixes (herb blends, pancake mix, beer or soda bread mix) — named and flavored to your book, campaign, or occasion. Have a moment in mind already? Tell us the theme and we'll take it from there.
+    </div>
+  </div>
+</section>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Timeline & minimums</h2>
+      <p>Everything below is counted backward from your pickup date — so "7 days before pickup" means 7 days before your group picks up, not 7 days from today.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">—</div>
+        <div>
+          <h3>2–3 weeks before pickup: request your drop</h3>
+          <p>Reach out with your theme and preferred date, and confirm with your group ahead of time that they're on board with the $100 minimum. We'll confirm we're free that day, or offer an alternate.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">—</div>
+        <div>
+          <h3>Before anything is designed: organizer confirms</h3>
+          <p>We share example pricing and the organizer gives us the go-ahead. We only build the menu and open ordering once that's confirmed.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">—</div>
+        <div>
+          <h3>7 days before pickup: order window opens</h3>
+          <p>Your private link goes live and your group starts ordering.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">—</div>
+        <div>
+          <h3>3 days before pickup: orders close</h3>
+          <p>The menu locks so we can start long-fermentation sourdough and get everything baked fresh for pickup.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The details</h2>
+    </div>
+    <div class="terms">
+      <div class="term">
+        <div class="label">Minimum order</div>
+        <div class="value">$100 per group</div>
+      </div>
+      <div class="term">
+        <div class="label">Payment</div>
+        <div class="value">Everyone pays their own way at order</div>
+      </div>
+      <div class="term">
+        <div class="label">Pickup or drop-off area</div>
+        <div class="value">Within 15 miles of Zeeland, MI — a bit further? We can meet at a public spot along the way.</div>
+      </div>
+      <div class="term">
+        <div class="label">Group access</div>
+        <div class="value">One private link — shared only with who you choose</div>
+      </div>
+    </div>
+    <div class="math-note">
+      For scale: a $100 minimum split across a group of 6 is about $17 a person — roughly a focaccia plus a cookie or scone each.
+    </div>
+  </div>
+</section>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Let's plan your bake</h2>
+      <p>One person from your group reaches out with the theme, date, and pickup location — we'll take it from there.</p>
+      <div class="cta-buttons">
+        <a class="btn btn-primary" href="mailto:hello@whiskeredwoods.com">Email us your theme</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">The Whiskered Woods</div>
+  <div>Cottage-baked in Zeeland, Michigan · Made under Michigan Cottage Food Law</div>
+</footer>
+
+</body>
+</html>
