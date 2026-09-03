@@ -201,6 +201,23 @@
     color:var(--clay-dark);
     margin-top:2px;
   }
+  .blocks-list{
+    border-top:1px solid var(--line);
+    margin-bottom:24px;
+  }
+  .block-row{
+    display:grid;
+    grid-template-columns:160px 1fr;
+    gap:16px;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    font-size:15px;
+  }
+  .block-row .cat{
+    font-family:'Fraunces',serif;
+    color:var(--moss-dark);
+  }
+  .block-row .opt{color:var(--ink-soft);}
   .table-note{
     font-size:13px;
     color:var(--ink-soft);
@@ -308,8 +325,8 @@
     .terms{grid-template-columns:1fr;}
     .term:nth-child(odd){border-right:none;}
     .why-grid{grid-template-columns:1fr; gap:22px;}
-  }
-</style>
+    .block-row{grid-template-columns:1fr;}
+  }</style>
 </head>
 <body>
 
@@ -419,7 +436,26 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Menu inspiration & example pricing</h2>
-      <p>A sense of what a themed menu looks like, item by item. Actual products and pricing are designed fresh per event.</p>
+      <p>Every menu is built from the same simple categories — pick what fits, and tell us your theme. We'll suggest flavors, so you don't have to figure it out alone.</p>
+    </div>
+
+    <div class="blocks-list">
+      <div class="block-row">
+        <div class="cat">Bread</div>
+        <div class="opt">One focaccia or artisan loaf — up to two if you'd like variety</div>
+      </div>
+      <div class="block-row">
+        <div class="cat">Scones</div>
+        <div class="opt">One 4-pack</div>
+      </div>
+      <div class="block-row">
+        <div class="cat">Cookies</div>
+        <div class="opt">One 4-pack</div>
+      </div>
+      <div class="block-row">
+        <div class="cat">Dry mix</div>
+        <div class="opt">Tea blend, herb dip, pancake mix, or beer/soda bread mix</div>
+      </div>
     </div>
 
     <table class="pricing-table">
