@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get the weekly menu — Whiskered Woods</title>
+<meta name="description" content="Sign up to get the Whiskered Woods weekly menu straight to your inbox, before it's anywhere else.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #FBF3E7;
+    --bark: #3D2B1F;
+    --terracotta: #C4693A;
+    --forest: #5B7553;
+    --gold: #E8B04B;
+    --line: rgba(61, 43, 31, 0.14);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-font-smoothing: antialiased; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--bark);
+    font-family: 'Karla', -apple-system, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .mark {
+    display: block;
+    margin: 0 auto 28px;
+    width: 64px;
+    height: 64px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2rem, 6vw, 2.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-align: center;
+  }
+
+  .sub {
+    text-align: center;
+    font-size: 1.05rem;
+    color: var(--bark);
+    opacity: 0.82;
+    max-width: 38ch;
+    margin: 0 auto 30px;
+  }
+
+  .sub strong {
+    font-weight: 600;
+    color: var(--terracotta);
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--forest);
+    margin: 0 auto 30px;
+    border-radius: 2px;
+  }
+
+  .form-panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 24px;
+    box-shadow: 0 1px 2px rgba(61, 43, 31, 0.04);
+  }
+
+  .form-panel p.hint {
+    margin: 0 0 18px;
+    font-size: 0.92rem;
+    color: var(--bark);
+    opacity: 0.65;
+    text-align: center;
+  }
+
+  /* ---- Mailchimp embed target ----
+     Paste your Mailchimp signup form snippet below, inside #mc-embed.
+     It will inherit spacing from this wrapper; feel free to strip
+     Mailchimp's own inline styles on the input/button if they clash. */
+  #mc-embed {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mc-field-group {
+    margin-top: 20px;
+  }
+
+  .optionalParent {
+    margin-top: 40px;
+  }
+
+  #mc-embed input[type="email"], #mc-embed input[type="text"] {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-family: 'Karla', sans-serif;
+    font-size: 1rem;
+    color: var(--bark);
+    background: var(--cream);
+  }
+
+  #mc-embed input[type="email"]:focus, #mc-embed input[type="text"]:focus {
+    outline: 2px solid var(--forest);
+    outline-offset: 1px;
+  }
+
+  #mc-embed button,
+  #mc-embed input[type="submit"] {
+    width: 100%;
+    padding: 13px 14px;
+    border: none;
+    border-radius: 8px;
+    background: var(--terracotta);
+    color: #fff;
+    font-family: 'Karla', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  #mc-embed button:hover,
+  #mc-embed input[type="submit"]:hover {
+    background: #ae5a30;
+  }
+
+  #mc-embed button:focus-visible,
+  #mc-embed input[type="submit"]:focus-visible {
+    outline: 2px solid var(--forest);
+    outline-offset: 2px;
+  }
+
+  .placeholder-note {
+    font-size: 0.85rem;
+    color: var(--bark);
+    opacity: 0.55;
+    text-align: center;
+    padding: 10px 0 2px;
+  }
+
+  .footnote {
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--bark);
+    opacity: 0.6;
+    margin-top: 22px;
+    max-width: 40ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .forwarded {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+
+  .forwarded p {
+    font-size: 0.92rem;
+    color: var(--bark);
+    opacity: 0.7;
+    margin: 0;
+  }
+
+  .sms {
+    margin-top: 28px;
+    text-align: center;
+  }
+
+  .sms p.sms-lead {
+    font-size: 0.92rem;
+    color: var(--bark);
+    opacity: 0.7;
+    margin: 0 0 12px;
+  }
+
+  .sms-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1.5px solid var(--forest);
+    border-radius: 8px;
+    color: var(--forest);
+    background: transparent;
+    font-family: 'Karla', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .sms-btn:hover {
+    background: var(--forest);
+    color: #fff;
+  }
+
+  .sms-btn:focus-visible {
+    outline: 2px solid var(--forest);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .wrap { animation: rise 0.5s ease-out; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <h1>Get this week's menu</h1>
+  <p class="sub">Every Friday, we send out what's baking, what's new, and what's coming up — <strong>straight to your inbox</strong>, before it's anywhere else.</p>
+
+  <div class="divider"></div>
+
+  <div class="form-panel">
+    <p class="hint">Usually only one email a week. Unsubscribe anytime.</p>
+
+    <div id="mc-embed">
+      <div id="mc_embed_shell">
+  
+        <div id="mc_embed_signup">
+            <form action="https://whiskeredwoods.us17.list-manage.com/subscribe/post?u=0a128a0ddc2f0491a836a8ee1&amp;id=6918479821&amp;f_id=0014f2e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+                <div id="mc_embed_signup_scroll"><h2>Subscribe to Whiskered Woods Emails</h2>
+                    <div class="indicates-required">
+                      <span class="asterisk">*</span> indicates required
+                    </div>
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" />
+                    </div>
+                    <div class="mc-field-group">
+                      <label for="mce-FNAME">First Name </label>
+                      <input type="text" name="FNAME" class=" text" id="mce-FNAME" value="" />
+                    </div>
+                    <div class="mc-field-group">
+                      <label for="mce-LNAME">Last Name </label>
+                      <input type="text" name="LNAME" class=" text" id="mce-LNAME" value="" />
+                    </div>
+                <div id="mce-responses" class="clear foot">
+                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                <input type="text" name="b_0a128a0ddc2f0491a836a8ee1_6918479821" tabindex="-1" value="">
+            </div>
+                <div class="optionalParent">
+                    <div class="clear foot">
+                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+        </div>
+
+    </div>
+
+  </div>
+
+  <p class="footnote">Whiskered Woods is a small homeschool bakery in Zeeland, MI. We bake, our kids run the shop.</p>
+
+  <div class="sms">
+    <p class="sms-lead">Prefer a text over an email?</p>
+    <a class="sms-btn" href="https://www.hotplate.com/whiskeredwoods?sms_reminder=true" target="_blank" rel="noopener">Get text reminders instead</a>
+  </div>
+
+</div>
+
+</body>
+</html>
